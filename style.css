@@ -1,0 +1,1776 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #09040d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%,
+            rgba(255, 105, 180, 0.12),
+            transparent 30%),
+        radial-gradient(circle at 80% 80%,
+            rgba(255, 20, 147, 0.10),
+            transparent 30%),
+        #09040d;
+
+    z-index: -5;
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, .8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 192, 203, .5) 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    animation: starMove 30s linear infinite;
+}
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 18px;
+    opacity: .7;
+
+    animation:
+        floatHeart 8s linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0) rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .7;
+    }
+
+    90% {
+        opacity: .5;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 80px 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   OPENING SCREEN
+========================================= */
+
+.opening-screen {
+    text-align: center;
+}
+
+.opening-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-text {
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #f8a9cc;
+    margin-bottom: 30px;
+}
+
+.opening-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 10vw, 100px);
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.opening-title span {
+    font-family: "Great Vibes", cursive;
+    color: #ff9bc8;
+
+    text-shadow:
+        0 0 15px rgba(255, 100, 180, .7),
+        0 0 40px rgba(255, 100, 180, .4);
+}
+
+.opening-subtitle {
+    margin: 35px auto;
+
+    font-size: 16px;
+    line-height: 2;
+
+    color: #d8cbd3;
+}
+
+.tiny-text {
+    margin-top: 20px;
+
+    font-size: 11px;
+    color: #8e7e8b;
+
+    letter-spacing: 1px;
+}
+
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.glow-button,
+.next-button {
+    border: none;
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.glow-button {
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,
+            #ff75b9,
+            #d93485);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 0 20px rgba(255, 70, 160, .4),
+        0 10px 35px rgba(255, 50, 150, .2);
+}
+
+.glow-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 35px rgba(255, 70, 160, .7),
+        0 15px 40px rgba(255, 50, 150, .3);
+}
+
+.glow-button span {
+    margin-left: 8px;
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    top: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 160, 210, .3);
+
+    background: rgba(30, 10, 25, .7);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 20px rgba(255, 100, 180, .2);
+}
+
+.music-button.playing {
+    animation: musicPulse 1.2s infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================
+   BIRTHDAY
+========================================= */
+
+.birthday-screen {
+    text-align: center;
+}
+
+.birthday-content {
+    max-width: 700px;
+}
+
+.eyebrow {
+    color: #f39bc2;
+
+    letter-spacing: 5px;
+    font-size: 11px;
+
+    margin-bottom: 25px;
+}
+
+.birthday-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 12vw, 120px);
+
+    line-height: .8;
+}
+
+.birthday-title span {
+    display: block;
+
+    color: #ff91c5;
+
+    text-shadow:
+        0 0 25px rgba(255, 90, 180, .5);
+}
+
+.name {
+    margin-top: 30px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(55px, 12vw, 100px);
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px rgba(255, 150, 200, .5);
+}
+
+.cake {
+    font-size: 80px;
+
+    margin: 35px 0;
+
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.birthday-message {
+    color: #d6c8d2;
+
+    line-height: 2;
+
+    font-size: 15px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.section-title span {
+    display: block;
+
+    font-family: "Great Vibes", cursive;
+
+    color: #ff96c8;
+}
+
+.story-intro {
+    max-width: 650px;
+
+    margin: 25px auto;
+
+    color: #cbbdc8;
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   MEMORY CARDS
+========================================= */
+
+.memory-card {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    margin: 100px 0;
+
+    text-align: left;
+}
+
+.memory-card.reverse {
+    direction: rtl;
+}
+
+.memory-card.reverse .memory-text {
+    direction: ltr;
+}
+
+.photo-wrapper {
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 150, 200, .2);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .4),
+        0 0 30px rgba(255, 100, 180, .1);
+}
+
+.photo-wrapper img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.photo-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.memory-text span {
+    color: #f087b7;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.memory-text h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    margin: 15px 0;
+
+    font-weight: 500;
+}
+
+.memory-text p {
+    color: #b9aab6;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+.next-button {
+    background: transparent;
+
+    color: #f4aacb;
+
+    border: 1px solid rgba(255, 150, 200, .3);
+
+    border-radius: 40px;
+
+    padding: 14px 25px;
+
+    font-size: 13px;
+
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    background: rgba(255, 100, 180, .1);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   LOVE GRID
+========================================= */
+
+.love-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 60px 0;
+}
+
+.love-card {
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 120, 180, .09),
+            rgba(255, 255, 255, .02));
+
+    border: 1px solid rgba(255, 150, 200, .1);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.love-card:hover {
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 120, 180, .15),
+            rgba(255, 255, 255, .03));
+}
+
+.love-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.love-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.love-card p {
+    font-size: 12px;
+
+    color: #aa9ba7;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-container {
+    max-width: 700px;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.letter-paper {
+    margin-top: 30px;
+
+    padding: 55px 45px;
+
+    text-align: left;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(145deg,
+            #fff8fb,
+            #f7e7ef);
+
+    color: #35242d;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, .4);
+
+    position: relative;
+}
+
+.letter-paper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(100, 40, 70, .15);
+
+    pointer-events: none;
+}
+
+.letter-decoration {
+    text-align: center;
+
+    color: #d35d92;
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.letter-paper h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 45px;
+
+    color: #a93668;
+
+    margin-bottom: 30px;
+}
+
+.letter-paper p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.letter-ending {
+    color: #a93668;
+
+    font-weight: 600;
+}
+
+.signature {
+    margin-top: 40px;
+
+    text-align: right;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+}
+
+.signature span {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 25px;
+
+    color: #a93668;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin: 60px auto 30px;
+
+    max-width: 700px;
+}
+
+.gallery-item {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 150, 200, .15);
+}
+
+.gallery-item.large {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 200px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    color: #bbaab6;
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   SECRET
+========================================= */
+
+.secret-container {
+    text-align: center;
+
+    max-width: 700px;
+}
+
+.lock {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation: lockFloat 2s ease-in-out infinite;
+}
+
+@keyframes lockFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.secret-title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 80px;
+
+    color: #ff9dca;
+}
+
+.secret-subtitle {
+    color: #bbaab7;
+
+    line-height: 2;
+
+    margin: 20px 0 35px;
+}
+
+.secret-message {
+    margin-top: 50px;
+
+    animation: revealMessage 1.5s ease forwards;
+}
+
+@keyframes revealMessage {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.secret-heart {
+    font-size: 50px;
+
+    margin-bottom: 25px;
+}
+
+#typewriter {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(22px, 4vw, 32px);
+
+    line-height: 1.7;
+
+    color: #f7eaf1;
+}
+
+.secret-final {
+    margin-top: 40px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 40px;
+
+    color: #ff9dca;
+}
+
+
+/* =========================================
+   FINAL SCREEN
+========================================= */
+
+.final-screen {
+    text-align: center;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 70, 160, .12),
+            transparent 50%);
+}
+
+.final-container {
+    max-width: 700px;
+}
+
+.final-stars {
+    font-size: 70px;
+
+    margin-bottom: 30px;
+
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.final-container h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 70px;
+
+    font-weight: 500;
+}
+
+.final-container h1 span {
+    font-family: "Great Vibes", cursive;
+
+    color: #ff91c4;
+}
+
+.final-container>p {
+    color: #c3b3be;
+
+    line-height: 2;
+
+    margin: 25px 0;
+}
+
+.final-heart {
+    font-size: 70px;
+
+    margin: 30px 0;
+
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.12);
+    }
+}
+
+.final-container h2 {
+    font-family: "Great Vibes", cursive;
+
+    color: #ff9ac8;
+
+    font-size: 55px;
+
+    font-weight: 400;
+}
+
+.forever {
+    margin-top: 35px !important;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.fade-in {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding:
+            70px 18px;
+    }
+
+    .moon {
+        width: 100px;
+        height: 100px;
+
+        right: -20px;
+        top: 5%;
+    }
+
+    .moon::after {
+        width: 100px;
+        height: 100px;
+
+        left: 20px;
+        top: -10px;
+    }
+
+    .opening-title {
+        font-size: 58px;
+    }
+
+    .opening-subtitle {
+        font-size: 13px;
+    }
+
+    .birthday-title {
+        font-size: 60px;
+    }
+
+    .name {
+        font-size: 65px;
+    }
+
+    .memory-card,
+    .memory-card.reverse {
+        grid-template-columns: 1fr;
+
+        direction: ltr;
+
+        gap: 25px;
+
+        margin: 70px 0;
+    }
+
+    .memory-text h3 {
+        font-size: 32px;
+    }
+
+    .love-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .love-card {
+        padding: 22px 14px;
+    }
+
+    .love-card h3 {
+        font-size: 21px;
+    }
+
+    .love-card p {
+        font-size: 11px;
+    }
+
+    .letter-paper {
+        padding: 45px 25px;
+    }
+
+    .letter-paper p {
+        font-size: 18px;
+    }
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .gallery-item img {
+        min-height: 140px;
+    }
+
+    .secret-title {
+        font-size: 65px;
+    }
+
+    .final-container h1 {
+        font-size: 55px;
+    }
+
+    .final-container h2 {
+        font-size: 48px;
+    }
+
+    .music-button {
+        width: 45px;
+        height: 45px;
+
+        right: 15px;
+        top: 15px;
+    }
+}
+
+
+/* =========================================
+   PASSWORD SCREEN 🔐
+========================================= */
+
+.password-screen {
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 30px 20px;
+
+    background:
+
+        radial-gradient(circle at 20% 20%,
+            rgba(255, 105, 180, .15),
+            transparent 30%),
+
+        radial-gradient(circle at 80% 80%,
+            rgba(255, 20, 147, .12),
+            transparent 30%),
+
+        #09040d;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PASSWORD CONTENT
+========================================= */
+
+.password-content {
+
+    width: 100%;
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        passwordAppear 1.2s ease forwards;
+}
+
+
+@keyframes passwordAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px) scale(.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   LOCK
+========================================= */
+
+.password-lock {
+
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation:
+        passwordLockFloat 2.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 20px rgba(255, 120, 190, .5));
+}
+
+
+@keyframes passwordLockFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0) rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px) rotate(-3deg);
+
+    }
+
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.password-eyebrow {
+
+    color: #f39bc2;
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.password-title {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(42px,
+            8vw,
+            75px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+
+.password-title span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color: #ff9bc8;
+
+    font-size:
+        clamp(50px,
+            10vw,
+            90px);
+
+    text-shadow:
+
+        0 0 15px rgba(255, 100, 180, .7),
+
+        0 0 40px rgba(255, 100, 180, .4);
+
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.password-subtitle {
+
+    color: #cbbdc8;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   PASSWORD BOX
+========================================= */
+
+.password-box {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   PASSWORD INPUT
+========================================= */
+
+.password-box input {
+
+    width: 100%;
+
+    padding:
+        17px 22px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid rgba(255,
+            150,
+            200,
+            .25);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .06);
+
+    backdrop-filter:
+        blur(15px);
+
+    color: white;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    outline: none;
+
+    transition:
+        border .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+
+.password-box input::placeholder {
+
+    color:
+        rgba(255,
+            255,
+            255,
+            .4);
+
+}
+
+
+.password-box input:focus {
+
+    border-color:
+        rgba(255,
+            150,
+            200,
+            .7);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .09);
+
+    box-shadow:
+
+        0 0 25px rgba(255,
+            100,
+            180,
+            .2);
+
+}
+
+
+/* =========================================
+   PASSWORD BUTTON
+========================================= */
+
+.password-button {
+
+    width: 100%;
+
+    padding:
+        17px 25px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.password-error {
+
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    color: #ff9dca;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   PASSWORD HINT
+========================================= */
+
+.password-hint {
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            .35);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   WRONG PASSWORD ANIMATION
+========================================= */
+
+.wrong-password {
+
+    animation:
+        passwordShake .5s ease;
+}
+
+
+@keyframes passwordShake {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+    20% {
+
+        transform:
+            translateX(-10px);
+
+    }
+
+    40% {
+
+        transform:
+            translateX(10px);
+
+    }
+
+    60% {
+
+        transform:
+            translateX(-7px);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(7px);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE PASSWORD SCREEN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .password-screen {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .password-lock {
+
+        font-size: 55px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .password-eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .password-title {
+
+        font-size: 43px;
+
+    }
+
+
+    .password-title span {
+
+        font-size: 60px;
+
+    }
+
+
+    .password-subtitle {
+
+        font-size: 12px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .password-box {
+
+        max-width: 340px;
+
+    }
+
+
+    .password-box input {
+
+        padding:
+            15px 18px;
+
+        font-size: 13px;
+
+    }
+
+
+    .password-button {
+
+        padding:
+            15px 20px;
+
+        font-size: 13px;
+
+    }
+
+}
+
+/* =========================================
+   HEART PHOTO GALLERY ❤️
+========================================= */
+
+.heart-gallery {
+    width: min(900px, 95vw);
+    margin: 60px auto 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 150px);
+
+    gap: 14px;
+
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* Individual photo */
+
+.heart-photo {
+    width: 135px;
+    height: 135px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 170, 210, 0.35);
+
+    box-shadow:
+        0 0 15px rgba(255, 100, 180, 0.15),
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    position: relative;
+}
+
+
+/* Images */
+
+.heart-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* Hover effect */
+
+.heart-photo:hover {
+    transform: translateY(-8px) scale(1.05);
+
+    border-color: rgba(255, 150, 205, 0.9);
+
+    box-shadow:
+        0 0 25px rgba(255, 100, 180, 0.4),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    z-index: 5;
+}
+
+
+.heart-photo:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   PHOTO POSITIONS
+========================================= */
+
+/* Row 1 */
+
+.photo-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.photo-2 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* Row 2 */
+
+.photo-3 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.photo-4 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.photo-5 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.photo-6 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.photo-7 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+
+/* Row 3 */
+
+.photo-8 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.photo-9 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.photo-10 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+
+/* Row 4 */
+
+.photo-11 {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+/* =========================================
+   MOBILE HEART GALLERY 📱
+========================================= */
+
+@media (max-width: 700px) {
+
+    .heart-gallery {
+
+        width: 100%;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        grid-template-rows:
+            repeat(4, 90px);
+
+        gap: 7px;
+
+        margin-top: 40px;
+    }
+
+
+    .heart-photo {
+
+        width: 65px;
+        height: 65px;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 0 10px rgba(255, 100, 180, 0.18);
+    }
+
+
+    .heart-photo:hover {
+
+        transform:
+            translateY(-4px) scale(1.04);
+    }
+
+}

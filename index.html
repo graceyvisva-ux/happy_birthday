@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Visvaaaa ♥️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         PASSWORD PROTECTION 🔐
+    ========================================== -->
+
+    <section id="passwordScreen" class="password-screen">
+
+        <div class="password-content">
+
+            <div class="password-lock">
+                🔐
+            </div>
+
+            <p class="password-eyebrow">
+                A LITTLE SECRET
+            </p>
+
+            <h1 class="password-title">
+                This little world
+                <br>
+                is only for
+                <span>Visvaaaa 🤍</span>
+            </h1>
+
+            <p class="password-subtitle">
+                Someone made something special for you.
+                <br>
+                But first...
+                <br>
+                you need the secret password. 👀💗
+            </p>
+
+            <div class="password-box">
+
+                <input type="password" id="passwordInput" placeholder="Enter the secret password" autocomplete="off">
+
+                <button id="passwordButton" class="glow-button password-button">
+                    Unlock My Surprise ❤️
+                </button>
+
+            </div>
+
+            <p id="passwordError" class="password-error"></p>
+
+            <p class="password-hint">
+                Only one person is supposed to know this... 🤍
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="stars"></div>
+    <div class="hearts-container"></div>
+
+    <body>
+
+        <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+        <div class="stars"></div>
+        <div class="hearts-container"></div>
+
+        <!-- =========================================
+         MUSIC
+    ========================================== -->
+
+        <audio id="birthdayMusic" loop>
+            <source src="music/birthday-song.mpeg" type="audio/mpeg">
+        </audio>
+
+        <button class="music-button" id="musicButton" aria-label="Music">
+            🎵
+        </button>
+
+
+        <!-- =========================================
+         OPENING SCREEN
+    ========================================== -->
+
+        <section id="openingScreen" class="screen opening-screen">
+
+            <div class="moon"></div>
+
+            <div class="opening-content">
+
+                <p class="small-text fade-in">
+                    Paaaa ... 👀
+                </p>
+
+                <h1 class="opening-title">
+                    I made something<br>
+                    <span>just for you.</span>
+                </h1>
+
+                <p class="opening-subtitle">
+                    But there's one little rule...
+                    <br>
+                    You have to stay until the very end. 🤍
+                </p>
+
+                <button id="openButton" class="glow-button">
+                    Open Your Surprise
+                    <span>🎁</span>
+                </button>
+
+                <p class="tiny-text">
+                    Audio icon mela irruku touch pannu🎵
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!--=========================================
+        BIRTHDAY REVEAL
+        ==========================================-->
+
+        <section id="birthdayScreen" class="screen birthday-screen hidden">
+
+            <div class="confetti-container"></div>
+
+            <div class="birthday-content">
+
+                <p class="eyebrow">
+                    TODAY IS YOUR DAY ✨
+                </p>
+
+                <h1 class="birthday-title">
+                    HAPPIEST
+                    <span>BIRTHDAY</span>
+                </h1>
+
+                <h2 class="name">
+                    Visvaaaa ❤️
+                </h2>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <p class="birthday-message">
+                    To my Thangapulla
+                    <br>
+                    another year older,
+                    another year of being
+                    wonderfully you. 🥹
+                </p>
+
+                <button class="next-button" data-next="storyScreen">
+                    Keep going ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         STORY
+    ========================================== -->
+
+        <section id="storyScreen" class="screen story-screen hidden">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    A LITTLE STORY
+                </p>
+
+                <h2 class="section-title">
+                    Some Memories Just Become
+                    <span>special.</span>
+                </h2>
+
+                <p class="story-intro">
+                    We never knew those little moments would mean so much someday.
+
+                <p class="story-intro">
+                    But every laugh, every silly moment, every ordinary day we shared slowly became a memory I want to
+                    keep forever.
+                    Because they're not just memories… they're pieces of us. ❤️
+                </p>
+
+
+                <!-- PHOTO 1 -->
+
+                <div class="memory-card">
+
+                    <div class="photo-wrapper">
+                        <img src="images/photo1.jpg" alt="Our memory">
+                    </div>
+
+                    <div class="memory-text">
+                        <span>MEMORY 01</span>
+
+                        <h3>
+                            A Beautifully Captured Memory❤️
+                        </h3>
+
+                        <p>
+                            Our First Picture Together ❤️
+                            That day, I never knew that you would become the person I could never erase from my life,
+                            the person I’d want beside me forever❤️
+
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 2 -->
+
+                <div class="memory-card reverse">
+
+                    <div class="photo-wrapper">
+                        <img src="images/photo2.jpg" alt="Our memory">
+                    </div>
+
+                    <div class="memory-text">
+                        <span>MEMORY 02</span>
+
+                        <h3>
+                            The Day My Heart Changed♥️
+                        </h3>
+
+                        <p>
+                            That was the day you became more than just someone I knew,you became someone I loved 🤍💗
+                            This was the day everything changed.
+                            One call, one moment… and my heart knew something was different🫀🦋
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 3 -->
+
+                <div class="memory-card">
+
+                    <div class="photo-wrapper">
+                        <img src="images/photo3.jpg" alt="Our memory">
+                    </div>
+
+                    <div class="memory-text">
+                        <span>MEMORY 03</span>
+
+                        <h3>
+                            The moments I wish I could replay🤍
+                        </h3>
+
+                        <p>
+                            I could re-live this moment a thousand times, just you, me, and that beautiful look between
+                            us👀🫣💗🫶🏼
+
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button class="next-button" data-next="thingsScreen">
+                    There's more ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         THINGS I LOVE
+    ========================================== -->
+
+        <section id="thingsScreen" class="screen things-screen hidden">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    JUST SO YOU KNOW...
+                </p>
+
+                <h2 class="section-title">
+                    A few things about
+                    <span>you.</span>
+                </h2>
+
+                <p class="story-intro">
+                    If I had to explain why you're so special,
+                    I probably wouldn't know where to start.
+                </p>
+
+                <div class="love-grid">
+
+                    <div class="love-card">
+                        <div class="love-icon">😂</div>
+                        <h3>Your craziness</h3>
+                        <p>
+                            You may look like an adult,
+                            but to me, you'll always be my little kiddo
+                        </p>
+                    </div>
+
+                    <div class="love-card">
+                        <div class="love-icon">🥹</div>
+                        <h3>Your heart</h3>
+                        <p>
+                            Not everyone knows how much love you have in your heart.
+                            Even the people who know you well sometimes don't understand your heart completely.
+                            But I do. ❤️
+
+                        </p>
+                    </div>
+
+                    <div class="love-card">
+                        <div class="love-icon">🤍</div>
+                        <h3>Your presence</h3>
+                        <p>
+                            Your presence feels like home,
+                            where I can finally be myself,
+                            the little girl who always longed
+                            to be a kid again. ❤️
+
+
+                        </p>
+                    </div>
+
+                    <div class="love-card">
+                        <div class="love-icon">✨</div>
+                        <h3>Your uniqueness</h3>
+                        <p>
+                            There is only one Visvaaaa.
+                            And that's enough said.
+                        </p>
+                    </div>
+
+                    <div class="love-card">
+                        <div class="love-icon">🫶</div>
+                        <h3>The way you are</h3>
+                        <p>
+                            You never pretend or change who you are.
+                            You simply stay true to yourself,
+                            with a heart that understands others. ❤️
+
+                        </p>
+                    </div>
+
+                    <div class="love-card">
+                        <div class="love-icon">❤️</div>
+                        <h3>Our friendship</h3>
+                        <p>
+                            More than anything,
+                            I want us to always be friends:
+                            laughing, annoying each other,
+                            and being there for one another. ❤️
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <button class="next-button" data-next="letterScreen">
+                    Read something from me ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         LETTER
+    ========================================== -->
+
+        <section id="letterScreen" class="screen letter-screen hidden">
+
+            <div class="letter-container">
+
+                <p class="eyebrow">
+                    FROM ME TO YOU
+                </p>
+
+                <div class="letter-paper">
+
+                    <div class="letter-decoration">
+                        ♡
+                    </div>
+
+                    <h2>
+                        Adeyyyyyyy Thangameyyyyy👀,
+                    </h2>
+
+                    <p>
+                        Happiest Birthday paaa 🤍💗
+                    </p>
+
+                    <p>
+                        The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you;the
+                        Lord turn his face toward you and give you peace. Numbers 6:24-26
+                        May the Lord bless you, guide you, and lead you on a beautiful path. I pray that every blessing
+                        He has kept for you unfolds at the right time, and that He gives you the strength to grow
+                        through every season. May His hands always protect you and may everyone see how beautifully God
+                        is building your life. ❤️.
+                    </p>
+
+                    <p>
+                        Yenaku niraya sollanum....aana enna solla eppidi solla nu therla, nee yen life la romba special,
+                        no words could ever express how much you were mean to me.
+                    </p>
+
+                    <p>
+                        And honestly...
+                        I don't know life would become this much beautiful. You and your presence changed everything
+                        that I want to be a kid again. Un kuda irruka appo my heart and soul feels safe.You became my
+                        home, my safe place and everything 💗
+                    </p>
+
+                    <p>
+                        Unnala niraya sirichan, romba happy aah irrundhen, irrundha kavala edhume niyabagam vara matudhu
+                        happiness mattum dhan irruku. Movies la lam solluvanga la oruthar magic maari varuvanga la, adhu
+                        maari dhan neeyum yen life la, Magic maari you came 🪄. Daily God ku avlo thanks solran, ippidi
+                        oruthan aah yen life la kuduthadhuku thanks sollite dhan irruken.
+                    </p>
+
+                    <p>
+                        Nee kavalapadadha, na un koodave irundhu unna tholla pannite iruppen 😁 Cheriyaa? 🫂 Ippo
+                        irukura maariye, innum neraya beautiful memories namma serndhu create pannuvom.
+                        One day, when we’re old, we’ll sit together, look back at all these years, and smile at every
+                        beautiful memory we created together. ❤️
+
+                    </p>
+
+                    <p>
+                        Eppavum happy aah irru🫂
+                        Edhu naalum serndhu face pannikalam 💗
+                        Ellathukum munnadi un health romba mukkiyam, badhram aah pathuko cheriyaa, Yeah! I know you are
+                        a hardworking man. Aana ellathuku munnadi un health dhan mukkiyam paa cheriyaa 🫂🤍
+                    </p>
+
+                    <p class="letter-ending">
+                        I LOVE YOU Paa 💗
+                    </p>
+
+                    <div class="signature">
+                        With lots of love, hugs, and a little bit of madness♥️
+                        <br>
+                        <span>The one who wants all her tomorrows with you 🫶</span>
+                    </div>
+
+                </div>
+
+                <button class="next-button" data-next="galleryScreen">
+                    One more memory ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         PHOTO GALLERY
+    ========================================== -->
+
+        <section id="galleryScreen" class="screen gallery-screen hidden">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    OUR LITTLE UNIVERSE
+                </p>
+
+                <h2 class="section-title">
+                    Moments worth
+                    <span>keeping.</span>
+                </h2>
+
+                <div class="heart-gallery">
+
+                    <!-- ROW 1 -->
+                    <div class="heart-photo photo-1">
+                        <img src="images/photo4.jpg" alt="Memory 1">
+                    </div>
+
+                    <div class="heart-photo photo-2">
+                        <img src="images/photo5.jpg" alt="Memory 2">
+                    </div>
+
+
+                    <!-- ROW 2 -->
+                    <div class="heart-photo photo-3">
+                        <img src="images/photo6.jpg" alt="Memory 3">
+                    </div>
+
+                    <div class="heart-photo photo-4">
+                        <img src="images/photo7.jpg" alt="Memory 4">
+                    </div>
+
+                    <div class="heart-photo photo-5">
+                        <img src="images/photo8.jpg" alt="Memory 5">
+                    </div>
+
+                    <div class="heart-photo photo-6">
+                        <img src="images/photo9.jpg" alt="Memory 6">
+                    </div>
+
+                    <div class="heart-photo photo-7">
+                        <img src="images/photo10.jpg" alt="Memory 7">
+                    </div>
+
+
+                    <!-- ROW 3 -->
+                    <div class="heart-photo photo-8">
+                        <img src="images/photo11.jpg" alt="Memory 8">
+                    </div>
+
+                    <div class="heart-photo photo-9">
+                        <img src="images/photo12.jpg" alt="Memory 9">
+                    </div>
+
+                    <div class="heart-photo photo-10">
+                        <img src="images/photo13.jpg" alt="Memory 10">
+                    </div>
+
+
+                    <!-- ROW 4 -->
+                    <div class="heart-photo photo-11">
+                        <img src="images/photo14.jpg" alt="Memory 11">
+                    </div>
+
+                </div>
+
+                <p class="gallery-caption">
+                    Every picture has a story.
+                    These are just a few of ours. ❤️
+                </p>
+
+                <button class="next-button" data-next="secretScreen">
+                    Wait... there's something else 👀
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         SECRET MESSAGE
+    ========================================== -->
+
+        <section id="secretScreen" class="screen secret-screen hidden">
+
+            <div class="secret-container">
+
+                <div class="lock">
+                    🔐
+                </div>
+
+                <p class="eyebrow">
+                    ONE LAST THING
+                </p>
+
+                <h2 class="secret-title">
+                    Visvaaaa...
+                </h2>
+
+                <p class="secret-subtitle">
+                    I kept one message hidden here.
+                    <br>
+                    And this one is only for you.
+                </p>
+
+                <button id="secretButton" class="glow-button">
+                    Open Secret Message ❤️
+                </button>
+
+
+                <div id="secretMessage" class="secret-message hidden">
+
+                    <div class="secret-heart">
+                        ❤️
+                    </div>
+
+                    <p id="typewriter"></p>
+
+                    <p class="secret-final">
+                        And I’d love every chapter with you🤍💗
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+         FINAL SCREEN
+    ========================================== -->
+
+        <section id="finalScreen" class="screen final-screen hidden">
+
+            <div class="final-container">
+
+                <div class="final-stars">
+                    ✨
+                </div>
+
+                <h1>
+                    Here's to
+                    <span>you.</span>
+                </h1>
+
+                <p>
+                    To more laughter.
+                    <br>
+                    More madness.
+                    <br>
+                    More memories.
+                    <br>
+                    More everything.
+                </p>
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <h2>
+                    Happy Birthday,
+                    <br>
+                    Visvaaaa.
+                </h2>
+
+                <p class="forever">
+                    Some people come into your life
+                    and become beautiful memories.
+                    <br>
+                    Some people come into your life
+                    and become a beautiful part of your story
+                    <br><br>
+                    But you, Visva…
+                    you became a beautiful part of my heart ❤️🫀
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
